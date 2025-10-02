@@ -24,7 +24,7 @@ ListeSCC : liste simplement chaînée circulaire.
 
 ListeDCC : liste doublement chaînée circulaire.
 
-###🔹 fonction_listes.c
+### 🔹 fonction_listes.c
 
 Contient toutes les fonctions de manipulation des listes.
 
@@ -80,7 +80,7 @@ void libererListeDCC(ListeDCC* liste) : libération mémoire.
 
 
 
-###🔹 main.c
+### 🔹 main.c
 
 Programme interactif avec menu :
 
@@ -107,7 +107,7 @@ Programme interactif avec menu :
 
 
 
-🧪 Exemple d’utilisation:
+**🧪 Exemple d’utilisation:**
 
 ```bash
 === PROGRAMME DE GESTION DE LISTES CHAÎNÉES ===
