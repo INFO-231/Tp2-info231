@@ -1,8 +1,7 @@
-# Insertion en Tête et en Queue dans une Liste Simplement Chaînée Circulaire
+# Insertion en Tête dans une Liste Simplement Chaînée Circulaire
 
 Ce projet implémente une **liste simplement chaînée circulaire** en
-langage C, permettant l'insertion d'éléments soit au début (tête) soit à
-la fin (queue) de la structure. Il inclut un menu interactif pour
+langage C, permettant l'insertion d'éléments  au début (tête de liste). Il inclut un menu interactif pour
 faciliter la manipulation de la liste.
 
 ## ⚙️ Fonctionnalités
@@ -13,13 +12,11 @@ Le programme offre les fonctionnalités suivantes via un menu interactif
 1.  **Créer une nouvelle liste**
 2.  **Insérer en TÊTE :** Ajoute un nouvel élément au début de la liste
     (le nouveau nœud devient la nouvelle tête).
-3.  **Insérer en QUEUE :** Ajoute un nouvel élément à la fin de la
-    liste.
-4.  **Afficher la liste :** Parcourt et affiche tous les éléments de la
+3.  **Afficher la liste :** Parcourt et affiche tous les éléments de la
     liste, en indiquant le retour à la tête.
-5.  **Vider la liste :** Libère toute la mémoire allouée dynamiquement
+4.  **Vider la liste :** Libère toute la mémoire allouée dynamiquement
     pour les nœuds.
-6.  **Quitter :** Libère la mémoire restante et termine le programme.
+5.  **Quitter :** Libère la mémoire restante et termine le programme.
 
 
 ### Structures de Données Clés
@@ -59,18 +56,7 @@ Algorithme :
    - dernier→suivant = nouveau
    - tête = nouveau
 ```
-2.Insertion end queue 
 
-```bash
-1. Créer nouveau nœud
-2. Si liste vide :
-   - tête = nouveau
-   - nouveau→suivant = nouveau
-3. Sinon :
-   - Trouver le dernier nœud
-   - dernier→suivant = nouveau
-   - nouveau→suivant = tête
-```
 ## 🚀 Compilation et Exécution
 
 ### Prérequis
