@@ -1,29 +1,30 @@
-##Liste Simplement Chaînée Triée - Insertion d'Éléments
+## Liste Simplement Chaînée Triée - Insertion d'Éléments
 
 Ce programme implémente une liste simplement chaînée triée où les éléments sont automatiquement insérés dans l'ordre croissant.
 
-##Structure du Programme
+## Structure du Programme
 
 Fichiers
 
-· list.h : Fichier d'en-tête contenant les déclarations des structures et fonctions
-· insertion_element_liste_simplement-trie.c : Implémentation des fonctions de la liste
+· fonction_listes.h : Fichier d'en-tête contenant les déclarations des structures et fonctions
+· fonction_listes.c : Implémentation des fonctions de la liste
 · main.c : Programme principal de démonstration
 
 Structures de Données
 
-typedef struct Node {
-    int data;           // Valeur stockée dans le nœud
-    struct Node* next;  // Pointeur vers le nœud suivant
-} Node;
+```c
+typedef struct NoeudSC {
+    int donnee; //valeur stockée 
+    struct NoeudSC* suivant;
+} NoeudSC;
+```
 
+## Fonctions Implémentées
 
-##Fonctions Implémentées
-
-· Node* create_node(int value) : Crée un nouveau nœud avec la valeur spécifiée
-· void insert_sorted(Node** head, int value) : Insère un élément dans la liste en maintenant l'ordre trié
-· void print_list(Node* head) : Affiche le contenu de la liste
-· void free_list(Node* head) : Libère la mémoire allouée pour la liste
+· NoeudSC* creerNoeudSC(int donnee): Crée un nouveau nœud avec la valeur spécifiée
+· void insererTriSC(NoeudSC** tete, int donnee): Insère un élément dans la liste en maintenant l'ordre trié
+· void afficherListeSC(NoeudSC* tete);: Affiche le contenu de la liste
+· void insererTriSC(NoeudSC** tete, int donnee): Libère la mémoire allouée pour la liste
 
 Fonctionnalités
 
@@ -31,25 +32,24 @@ Fonctionnalités
 · Gestion mémoire : Allocation et libération correcte de la mémoire
 · Affichage clair : Visualisation de la liste sous forme de chaîne
 
-##Compilation et Exécution
+## Compilation et Exécution
 
 Compilation
 
-gcc -o sorted_list main.c insertion_element_liste_simplement-trie.c
-
+make
 
 ##Exécution
 
-./sorted_list
+./main
 
 
-#Exemple d'Exécution
+# Exemple d'Exécution
 
 
 Liste triée : 1 -> 2 -> 3 -> 5 -> 8 -> 9 -> NULL
 
 
-##Explication de l'exemple
+## Explication de l'exemple
 
 Le programme principal insère les valeurs dans cet ordre : 5, 2, 8, 3, 9, 1
 
