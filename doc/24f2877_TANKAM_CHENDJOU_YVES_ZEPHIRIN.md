@@ -10,8 +10,7 @@ faciliter la manipulation de la liste.
 Le programme offre les fonctionnalités suivantes via un menu interactif
 :
 
-1.  **Créer une nouvelle liste :** Saisie manuelle du nombre d'éléments
-    et de leurs valeurs.
+1.  **Créer une nouvelle liste**
 2.  **Insérer en TÊTE :** Ajoute un nouvel élément au début de la liste
     (le nouveau nœud devient la nouvelle tête).
 3.  **Insérer en QUEUE :** Ajoute un nouvel élément à la fin de la
@@ -22,44 +21,56 @@ Le programme offre les fonctionnalités suivantes via un menu interactif
     pour les nœuds.
 6.  **Quitter :** Libère la mémoire restante et termine le programme.
 
-## 🏗️ Structure du Projet
-
-Le code source est contenu dans un seul fichier :
-`insertions_tête_queue_list_simpins_tête_queue_simpl.c`.
 
 ### Structures de Données Clés
 
--   `Noeud` : Structure de base représentant un élément de la liste.
-    `c     typedef struct Noeud {         int valeur;         struct Noeud *suivant;     } Noeud;`
+-   `NoeudSC` : Structure de base représentant un élément de la liste.
+   
+    `c     typedef struct NoeudSC {
+    int donnee;
+    struct NoeudSC* suivant;
+} NoeudSC;`
+
+
 -   **Liste Circulaire :** La liste est gérée par un pointeur
-    (`Noeud *liste`) qui pointe toujours vers le **premier élément (la
-    tête)**. Le dernier nœud de la liste pointe sur la tête, formant
+    (`Noeud *liste`) qui pointe toujours vers le **premier élément (la  tete)**. Le dernier nœud de la liste pointe sur la tête, formant
     ainsi la boucle circulaire.
+
+```c
+    typedef struct ListeSCC {
+    NoeudSC* tete;
+} ListeSCC;
+```
 
 ### Fonctions Principales
 
-  ----------------------------------------------------------------------------------------
-  Fonction                                             Description
-  ---------------------------------------------------- -----------------------------------
-  `CreerNoeud(int val)`                                Alloue et initialise un nouveau
-                                                       nœud.
+**1. Insertion en tête**
+Fonction : insererTeteSCC()
 
-  `Inserer(Noeud **liste, int valeur, int position)`   La fonction clé. Gère l'insertion
-                                                       en `TETE` (0) ou en `QUEUE` (1), y
-                                                       compris le cas de la liste vide.
+Algorithme : 
+```bash
+1. Créer nouveau nœud
+2. Si liste vide :
+   - tête = nouveau
+   - nouveau→suivant = nouveau (pointe sur lui-même)
+3. Sinon :
+   - Trouver le dernier nœud (qui pointe vers tête actuelle)
+   - nouveau→suivant = tête actuelle
+   - dernier→suivant = nouveau
+   - tête = nouveau
+```
+2.Insertion end queue 
 
-  `Afficher(Noeud *liste)`                             Parcourt la liste circulaire en
-                                                       utilisant une boucle `do-while` et
-                                                       affiche les valeurs.
-
-  `LibererListe(Noeud **liste)`                        Libère séquentiellement tous les
-                                                       nœuds de la liste pour éviter les
-                                                       fuites de mémoire.
-
-  `CreerListeParSaisie(Noeud **liste)`                 Gère la création initiale ou le
-                                                       remplacement d'une liste existante.
-  ----------------------------------------------------------------------------------------
-
+```bash
+1. Créer nouveau nœud
+2. Si liste vide :
+   - tête = nouveau
+   - nouveau→suivant = nouveau
+3. Sinon :
+   - Trouver le dernier nœud
+   - dernier→suivant = nouveau
+   - nouveau→suivant = tête
+```
 ## 🚀 Compilation et Exécution
 
 ### Prérequis
@@ -71,5 +82,7 @@ Le code source est contenu dans un seul fichier :
 Ouvrez un terminal et utilisez la commande suivante pour compiler le
 programme :
 
-\`\`\`bash gcc insertions_tête_queue_list_simpins_tête_queue_simpl.c -o
-liste_circulaire
+```bash
+make #compiler
+./main #exécuter
+```
